@@ -1,0 +1,46 @@
+{
+  "chuNha": {
+    "maChuNha": "CN00001",
+    "soLuongNhaChoThue": 2,
+    "soLuongNhaBan": 2,
+    "tenKH": "Lê Tuyệt Giai Kỳ"
+  },
+  "danhSachNhaChoThue": [
+    {
+      "maNhaChoThue": "NCT0001",
+      "tienThue1Thang": 8000000,
+      "thoiHanThue": 12,
+      "maNha": ["N000001", "N000001"],
+      "title": "Cho thuê nhà gần phố đi bộ Bùi Viện",
+      "maDiaChi": "DC00017",
+      "maLoaiNha": ["LN00002", "LN00002"],
+      "soLuongPhong": 3,
+      "ngayDang": "2023-07-01T00:00:00.000Z",
+      "ngayHetHan": "2023-08-01T00:00:00.000Z",
+      "tinhTrangNha": "Còn trống",
+      "luotXem": 0,
+      "maChuNha": "CN00001",
+      "maNVPhuTrach": "NV00001",
+      "maChiNhanh": "CNCT001",
+      "tenLoaiNha": "Nhà riêng"
+    },
+    {
+      "maNhaChoThue": "NCT0003",
+      "tienThue1Thang": 5000000,
+      "thoiHanThue": 36,
+      "maNha": ["N000004", "N000004"],
+      "title": "Cho thuê nhà gần trường Tôn Đức Thắng",
+      "maDiaChi": "DC00020",
+      "maLoaiNha": ["LN00001", "LN00001"],
+      "soLuongPhong": 2,
+      "ngayDang": "2023-07-05T00:00:00.000Z",
+      "ngayHetHan": "2023-09-05T00:00:00.000Z",
+      "tinhTrangNha": "Còn trống",
+      "luotXem": 72,
+      "maChuNha": "CN00001",
+      "maNVPhuTrach": "NV00003",
+      "maChiNhanh": "CNCT002",
+      "tenLoaiNha": "Chung cư"
+    }
+  ]
+}
