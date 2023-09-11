@@ -2,8 +2,8 @@
 // import axios from "axios";
 
 const API_URL = import.meta.env.VITE_SERVER_API;
-const OWNER_RENTING_HOUSE_ROUTE = import.meta.env
-  .VITE_OWNER_RENTING_HOUSE_ROUTE;
+const OWNER_SELLING_HOUSE_DIRTY_READ_ROUTE = import.meta.env
+  .VITE_OWNER_SELLING_HOUSE_DIRTY_READ_ROUTE;
 import PHOTOS from "../stores/photos.json";
 
 export default {
@@ -11,8 +11,7 @@ export default {
     return {
       // Initialize data properties
       mainData: {
-        chuNha: {},
-        danhSachNhaChoThue: [],
+        danhSachNhaBan: [],
       },
       fullUrl: window.location.href,
       pathname: "", // Pathname (e.g., '/products/12345')
@@ -31,17 +30,17 @@ export default {
   methods: {
     async fetchData() {
       try {
-        const getRentingHousesAPI = `${API_URL}/${OWNER_RENTING_HOUSE_ROUTE}/${this.userID}`;
-        console.log("API: " + getRentingHousesAPI);
-        const response = await fetch(getRentingHousesAPI);
+        const getSellingHousesAPI = `${API_URL}/${OWNER_SELLING_HOUSE_DIRTY_READ_ROUTE}/${this.userID}`;
+        console.log("API: " + getSellingHousesAPI);
+        const response = await fetch(getSellingHousesAPI);
 
         const data = await response.json();
 
         this.mainData = data;
-        this.mainData.danhSachNhaChoThue.map((house, index) => {
+        this.mainData.danhSachNhaBan.map((house, index) => {
           house.photo = PHOTOS[index];
         });
-
+        console.log("MAIN DATA: " + this.mainData);
         // USE axios
         // const response = await axios.get(getRentingHousesAPI);
         // console.log("Data received:", response);
@@ -56,17 +55,13 @@ export default {
 <template>
   <div v-if="mainData">
     <div class="num-of-renting-houses">
-      <h2>
-        Số lượng nhà cho thuê của chủ nhà
-        <i>{{ mainData.chuNha.tenKH }}</i>
-        : {{ mainData.chuNha.soLuongNhaChoThue }}
-      </h2>
+      <h2>Danh sách nhà bán của chủ nhà</h2>
     </div>
     <ul>
       <RentingHouseCard
-        v-for="(house, id) in mainData.danhSachNhaChoThue"
+        v-for="(house, id) in mainData.danhSachNhaBan"
         :key="id"
-        :price="house.tienThue1Thang"
+        :price="house.giaBan"
         :photo="house.photo"
         :title="house.title"
         :type="house.tenLoaiNha"
